@@ -28,48 +28,101 @@
     color: $accent-color;
 }
 
-.mobile-menu {
-    width: 40px;
-    height: 40px;
+.mobile-menu__cross {
+    display: none;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.mobile-menu {
+    display: inline-block;
 
     margin: 10px 0px 10px auto;
 
     background-color: transparent;
     border: 0;
 
+    z-index: 2;
+
+    &:hover,
+    &:focus {
+        fill: $accent-color;
+    }
+
     @media screen and (min-width:768px) {
         display: none;
     }
+
+    &.is-open .mobile-menu__burger {
+        display: none;
+    }
+
+    &.is-open .mobile-menu__cross {
+        display: block;
+    }
 }
+
 
 //-----------------------------
 
 .header__menu {
     display: none;
+    
+    @media screen and (max-width: 767px) {
+        &.is-open {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            display: flex;
+            flex-direction: column;
+
+            width: 100vw;
+            height: 100%;
+
+            padding: 48px 40px;
+
+            background-color: #fff;
+            
+            z-index: 1;
+        }
+    }
 
     @media screen and (min-width:768px) {
         display: flex;
+        align-items: center;
+        margin-left: auto;
     }
 }
+
+
 
 .header__nav {
     display: flex;
     align-items: center;
+
+    @media screen and (min-width: 768px) {
+        margin-right: 90px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-right: 315px;
+    }
 }
 
 .site-navigation {
-    margin-left: 93px;
     display: flex;
-    gap: 50px
+    gap: 32px;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        gap: 50px;
+        margin-left: 93px;
+        margin-bottom: 0px;
+    }
 }
 
 .site-navigation__link {
-    display: inline-block;
-    padding: 32px 0px;
+    display: block;
 
     font-weight: 500;
     line-height: 1.14;
@@ -81,22 +134,51 @@
     &:focus {
         color: $accent-color;
     }
+
+    @media screen and (max-width: 767px) {
+        font-size: 40px;
+    }
+
+    @media screen and (min-width: 768px) {
+        padding: 32px 0px;
+    }
 }
 
 .contacts-links {
     display: flex;
-    margin-left: auto;
-    gap: 50px;
+    flex-direction: column-reverse;
+    gap: 32px;
+
+    @media screen and (max-width: 767px) {
+        margin-top: auto;
+        margin-bottom: 64px;
+    }
+
+    @media screen and (min-width: 768px) {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-top: 0;
+        margin-right: 0;
+        margin-left: auto;
+
+        flex-direction: row;
+        gap: 30px;
+    }
 }
 
 .contacts-links__icon {
     margin-right: 10px;
-
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
 }
 
 .contacts-links__link {
     display: flex;
-    padding: 32px 0px;
     align-items: center;
 
     color: $secondary-text-color;
@@ -113,7 +195,55 @@
         color: $accent-color;
         fill: $accent-color;
     }
+
+    @media screen and (max-width: 767px) {
+        font-size: 24px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 32px 0px;
+    }
 }
+
+.contacts-links__link--tel {
+    @media screen and (max-width: 767px) {
+        font-size: 34px;
+        color: $accent-color;
+    }
+}
+
+.header-socials-list {
+    display: none;
+
+    @media screen and (max-width: 767px) {
+        margin-right: auto;
+        display: flex;
+    }
+}
+
+.header-socials__item {
+    &:not(:last-child) {
+        padding-right: 10px;
+        border-right: 1px solid rgba(33, 33, 33, .2);
+    }
+
+    &:not(:first-child) {
+        padding-left: 10px;
+    }
+}
+
+.header-socials__link {
+    display: inline-block;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+
+    color: $accent-color;
+}
+
+
 
 .site-navigation__link--current {
     position: relative;
@@ -121,15 +251,17 @@
 }
 
 .site-navigation__link--current::after {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-
-    content: '';
-    width: 100%;
-    height: 4px;
-
-    border-radius: 2px;
-
-    background-color: $accent-color;
+    @media screen and (min-width: 767px) {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        
+        content: '';
+        width: 100%;
+        height: 4px;
+        
+        border-radius: 2px;
+        
+        background-color: $accent-color;
+    }
 }

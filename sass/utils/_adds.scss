@@ -9,6 +9,10 @@
     clip: rect(0 0 0 0);
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 .container {
     margin: 0 auto;
     padding: 0px 15px;
