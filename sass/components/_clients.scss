@@ -1,12 +1,15 @@
 .clients-list {
     display: flex;
     gap: 30px;
+
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .clients-list__icon-wrap {
     display: flex;
     height: 92px;
-    width: 170px;
+    width: 210px;
     justify-content: center;
     align-items: center;
     border: 1px solid $clients-border-color;
@@ -20,5 +23,9 @@
         border: 1px solid $accent-color;
         fill: $accent-color;
         }
+
+    @media screen and (min-width: 1200px) {
+        width: 170px;
+    }
 }
 

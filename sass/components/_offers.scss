@@ -1,7 +1,15 @@
+.section__offers {
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+
+}
+
 .offer-list {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+
 }
 
 .offer-list__item {
