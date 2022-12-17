@@ -412,8 +412,8 @@ img {
 }
 @media screen and (min-width: 768px) {
   .hero {
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../../images/bg-tab.jpg);
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../images/bg-tab.jpg);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/bg-tab.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg-tab.jpg);
     background-size: 768px 400px;
   }
 }
@@ -426,8 +426,8 @@ img {
 @media screen and (min-width: 1200px) {
   .hero {
     padding: 200px 0px;
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../../images/bg.jpg);
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../images/bg.jpg);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/bg.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg.jpg);
     background-size: 1600px 600px;
   }
 }
@@ -441,13 +441,17 @@ img {
 .hero__title {
   margin: 0 auto;
   margin-bottom: 30px;
-  width: 360px;
   font-weight: 900;
   font-size: 26px;
   line-height: 1.6;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .hero__title {
+    width: 360px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .hero__title {
@@ -1042,10 +1046,19 @@ img {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  min-width: 450px;
-  min-height: 609px;
   padding: 40px;
   background-color: #FFFFFF;
+}
+@media screen and (max-width: 480px) {
+  .modal {
+    min-width: 90%;
+    min-height: 609px;
+  }
+}
+@media screen and (min-width: 481px) {
+  .modal {
+    min-width: 450px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .modal {
